@@ -1,7 +1,7 @@
 defmodule Bob do
   def hey(input) do
     cond do
-      capitalquestion?(input) -> "Calm down, I know what I'm doing!"
+      shouting?(input) && question?(input) -> "Calm down, I know what I'm doing!"
       question?(input) -> "Sure."
       silence?(input) -> "Fine. Be that way!"
       shouting?(input) -> "Whoa, chill out!"
@@ -19,9 +19,5 @@ defmodule Bob do
 
   defp question?(input) do
     String.ends_with?(input, "?")
-  end
-
-  defp capitalquestion?(input) do
-    shouting?(input) && question?(input)
   end
 end
